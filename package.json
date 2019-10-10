@@ -1,0 +1,24 @@
+{
+  "name": "node_ts",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "concurrently 'tsc -w' 'nodemon --inspect=0.0.0.0:9999 --watch dist/**/* -e js --exec node dist/main.js'",
+    "build": "tsc",
+    "start": "node dist/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.8.2",
+    "koa-router": "^7.4.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.0.50",
+    "@types/koa-router": "^7.0.42",
+    "concurrently": "^5.0.0",
+    "nodemon": "^1.19.3",
+    "typescript": "^3.6.3"
+  }
+}
