@@ -4,9 +4,9 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "concurrently 'tsc -w' 'nodemon --inspect=0.0.0.0:9999 --watch dist/**/* -e js --exec node dist/main.js'",
+    "start:dev": "tsc && concurrently 'tsc -w' 'nodemon --inspect=0.0.0.0:9999 --watch ./src/**/* -e js --exec node src/main.js'",
     "build": "tsc",
-    "start": "node dist/main.js"
+    "start": "node src/main.js"
   },
   "author": "",
   "license": "ISC",

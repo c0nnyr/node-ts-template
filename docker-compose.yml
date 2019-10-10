@@ -2,7 +2,12 @@
 version: '3'
 services:
   node_ts:
-    build: ./
+    build: 
+      context: .
+      dockerfile: Dockerfile_local
+    env_file: ./common.env
+    volumes:
+        - .:/app
     ports:
         - "3000:3000" #API接口
         - "9999:9999" #调试
