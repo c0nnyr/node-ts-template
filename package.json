@@ -1,12 +1,12 @@
 {
-  "name": "node_ts",
+  "name": "node_ts_test",
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "tsc && concurrently 'tsc -w' 'nodemon --inspect=0.0.0.0:9999 --watch ./src/**/* -e js --exec node src/main.js'",
-    "build": "tsc",
-    "start": "node src/main.js"
+    "start:dev": "concurrently 'tsc -w -p src' 'sleep 1;nodemon --inspect=0.0.0.0:9999 --legacy-watch ./src/**/* -e js --exec node src/main.js'",
+    "build": "tsc -p src",
+    "start": "if [ \"$DEBUG\" = \"true\" ]; then node --inspect=0.0.0.0:9999 src/main.js; else; node src/main.js; fi"
   },
   "author": "",
   "license": "ISC",
